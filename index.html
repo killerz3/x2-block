@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Block Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: rgb(35, 33, 54);
+        }
+
+        #gameContainer {
+            position: relative;
+            width: 100%;
+            max-width: 600px; /* Limit max width for larger screens */
+            text-align: center;
+        }
+
+        canvas {
+            display: block;
+            margin: 0 auto; /* Center the canvas */
+            border-radius: 20px; /* Rounded corners for the main screen */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .block {
+            border-radius: 10px; /* Rounded corners for blocks */
+        }
+
+        #gameOverMessage {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        #score {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+        }
+
+        #restartButton {
+            display: none;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            font-size: 20px;
+            background-color: rgb(62, 143, 176);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 600px) {
+            canvas {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        <div id="score">Score: 0</div>
+        <div id="gameOverMessage">Game Over</div>
+        <button id="restartButton" onclick="restartGame()">Restart</button>
+    </div>
+
+    <script src="game.js">
+        
+    </script>
+</body>
+</html>
