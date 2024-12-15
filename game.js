@@ -284,9 +284,10 @@ window.onload = () => {
 
     const updateCanvasSize = () => {
         const width = Math.min(window.innerWidth, 500);
-        const height = Math.min(window.innerHeight, ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING);
+        const height = Math.min(window.innerHeight - 20, ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING);
         canvas.width = width;
         canvas.height = height;
+        canvas.style.marginTop = `${(window.innerHeight - height) / 2}px`;
     };
 
     window.addEventListener('resize', updateCanvasSize);
