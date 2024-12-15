@@ -284,8 +284,9 @@ window.onload = () => {
 
     const updateCanvasSize = () => {
         const width = Math.min(window.innerWidth, 500);
+        const height = Math.min(window.innerHeight, ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING);
         canvas.width = width;
-        canvas.height = ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING;
+        canvas.height = height;
     };
 
     window.addEventListener('resize', updateCanvasSize);
