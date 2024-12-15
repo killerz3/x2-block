@@ -274,14 +274,24 @@ class Game {
     }
 }
 
+// ...existing code...
+
 window.onload = () => {
     const canvas = document.getElementById('gameCanvas');
     const messageDiv = document.getElementById('gameOverMessage');
     const scoreDiv = document.getElementById('score');
     const restartButton = document.getElementById('restartButton');
 
-    canvas.width = 500;
-    canvas.height = ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING;
+    const updateCanvasSize = () => {
+        const width = Math.min(window.innerWidth, 500);
+        canvas.width = width;
+        canvas.height = ROWS * (BLOCK_SIZE + PADDING) + BLOCK_SIZE + 2 * PADDING;
+    };
 
-    game =new Game(canvas, messageDiv, scoreDiv, restartButton);
+    window.addEventListener('resize', updateCanvasSize);
+    updateCanvasSize();
+
+    game = new Game(canvas, messageDiv, scoreDiv, restartButton);
 };
+
+// ...existing code...
